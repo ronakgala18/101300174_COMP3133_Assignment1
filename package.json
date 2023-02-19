@@ -1,0 +1,27 @@
+{
+  "name": "101300174_comp3133_assignment1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronakgala18/101300174_COMP3133_Assignment1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronakgala18/101300174_COMP3133_Assignment1/issues"
+  },
+  "homepage": "https://github.com/ronakgala18/101300174_COMP3133_Assignment1#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "mongoose": "^6.9.2",
+    "nodemon": "^2.0.20"
+  }
+}
