@@ -2,9 +2,10 @@
   "name": "101300174_comp3133_assignment1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,16 @@
   },
   "homepage": "https://github.com/ronakgala18/101300174_COMP3133_Assignment1#readme",
   "dependencies": {
-    "validator": "^13.9.0",
+    "apollo-server-express": "^3.11.1",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
     "graphql": "^15.8.0",
     "mongoose": "^6.9.1",
-    "nodemon": "^2.0.20"
-    
+    "nodemon": "^2.0.20",
+    "validator": "^13.9.0"
   }
 }
