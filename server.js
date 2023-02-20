@@ -1,17 +1,10 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const TypeDefs = require('./schema')
-const Resolvers = require('./resolver')
-const { ApolloServer } = require('apollo-server-express')
-const dotenv = require('dotenv');
-dotenv.config('./config.env'); 
+const app = require(`${__dirname}/app`);
+const mongoose = require("mongoose");
 
 //mongoDB Atlas Connection String
-const db_url = process.env.DATABASE
-
-mongoose.connect(db_url, {
+const db_url = "mongodb+srv://101300174_Ronak:Greatnews_321@cluster0.18gn2vn.mongodb.net/comp3133_assigment1"
+mongoose.set('strictQuery', true); // for suppressing the deprecation warning
+mongoose.connect(db_url, { 
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(success => {
@@ -20,27 +13,8 @@ mongoose.connect(db_url, {
   console.log('Error Mongodb connection')
 });
 
-//Define Apollo Server
-const server = new ApolloServer({
-  typeDefs: TypeDefs.typeDefs,
-  resolvers: Resolvers.resolvers
-})
-
-//Define Express Server
-const app = express();
-app.use(bodyParser.json());
-app.use('*', cors());
-
-async function startServer() {
-  await server.start();
-
-  //Add Express app as middleware to Apollo Server
-  server.applyMiddleware({ app });
- const PORT = 3000;
-  //Start listen 
-  app.listen(PORT, () =>
-    console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`)
-  );
-}
-
-startServer()
+// Request listening
+const port = 3000;
+app.listen(port, () => {
+    console.log(`App running on port ${port}..`);
+});

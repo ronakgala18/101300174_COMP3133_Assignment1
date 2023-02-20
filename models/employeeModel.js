@@ -23,4 +23,5 @@ const employeeSchema = mongoose.Schema({
         required: [true, "Salary is required"]
     }
 });
+
 module.exports = mongoose.model("Employee", employeeSchema);
