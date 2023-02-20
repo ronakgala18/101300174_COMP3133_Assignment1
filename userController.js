@@ -30,7 +30,7 @@ exports.signup=async args => {
 }
 
 
-exports. login=async args => {
+exports.login=async args => {
     try {
         const user = await User.findOne({ username: args.username })
 
